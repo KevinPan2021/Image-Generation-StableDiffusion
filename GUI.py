@@ -1,5 +1,6 @@
 application_name = 'Image Generation'
 # pyqt packages
+from PyQt5 import uic
 from PyQt5.QtGui import QPixmap, QImage
 from PyQt5.QtWidgets import QMainWindow, QApplication, QMessageBox, QFileDialog, QLabel
 from PyQt5.QtCore import pyqtSignal, QThread
@@ -14,7 +15,6 @@ import re
 import os
 
 
-from qt_main import Ui_Application
 from main import compute_device
 from ddpm import DDPMSampler
 from pipeline import preload_models, rescale, get_time_embedding
@@ -226,14 +226,13 @@ def pad_to_square(image):
     
         
         
-class QT_Action(Ui_Application, QMainWindow):
+class QT_Action(QMainWindow):
     label_image_ClickSig = pyqtSignal()
     
     def __init__(self):
         # system variable
         super(QT_Action, self).__init__()
-        self.setupUi(self)
-        self.retranslateUi(self)
+        uic.loadUi('qt_main.ui', self)
         self.setWindowTitle(application_name) # set the title
         
         # runtime variable
