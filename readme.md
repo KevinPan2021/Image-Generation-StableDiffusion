@@ -1,35 +1,44 @@
-Introduction:
-	This project aims to build stable diffusion image generation model from scratch. And load the pre-trained weights from hugging face.
+# Image Generation with Stable Diffusion
 
 
-Build: 
-	NIVIDIA RTX 4060 (VRAM 8 GB)
-	cuda 12.1
-	Anaconda 3 (Python 3.10)
-	PyTorch version: 2.1.2
+This project aims to build stable diffusion image generation model from scratch. And load the pre-trained weights from hugging face.
+![Diffusion](external/GUI.png)
 
 
 
-Generate ".py" file from ".ui" file:
-	1) open Terminal. Navigate to directory
-	2) Type "pyuic5 -x qt_main.ui -o qt_main.py"
+### Build: 
+
+	CPU: Intel i9-13900H (14 cores)
+	GPU: NVIDIA RTX 4060 (VRAM 8 GB)
+	RAM: 32 GB
 
 
 
-Core Project Structure:
-	GUI.py (Run to generate a GUI)
-	main.py
-	attention.py
-	clip.py
-	ddpm.py
-	diffusion.py
-	vae.py
-	model_converter.py
-	pipleline.py
-	qt_main.py
+### Python Packages:
+
+	conda install pytorch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 pytorch-cuda=12.1 -c pytorch -c nvidia
+	conda install -c conda-forge tqdm = 4.64.1
+	conda install -c conda-forge matplotlib = 3.8.0
+	conda install -c conda-forge numpy = 1.26.4
 
 
 
-Credits:
+### Code Structure:
+```bash
+├── GUI.py (Run to generate a GUI)
+├── main.py
+├── attention.py
+├── clip.py
+├── ddpm.py
+├── diffusion.py
+├── vae.py
+├── model_converter.py
+├── pipleline.py
+├── qt_main.ui
+
+```
+
+### Credits:
 	https://www.youtube.com/watch?v=ZBKpAp_6TGI&ab_channel=UmarJamil
+	"High-Resolution Image Synthesis with Latent Diffusion Models"
 	
